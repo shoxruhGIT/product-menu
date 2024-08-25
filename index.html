@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Menu</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght,HEXP@160..700,0..100&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="product">
+        <h1 class="product__name">Desserts</h1>
+        <div class="product__item">
+          
+        </div>
+      </div>
+      <div class="product__cart">
+        <h1>Your Cart</h1>
+        <div class="product__cart-empty">
+          <img src="assets/images/illustration-empty-cart.svg" alt="" />
+          <span>Your added items will appear here</span>
+        </div>
+        <div class="product__cart-items">
+          <div class="product__cart-info"></div>
+          <div class="product__cart-order">
+            <div class="product__cart-total">
+              <p>Order Total</p>
+              <h2 class="total">$</h2>
+            </div>
+            <button class="product__cart-order-btn">Confirm Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal__diolog">
+        <div class="modal__content">
+          <img src="assets/images/icon-order-confirmed.svg" alt="">
+          <h1>Order Confirmed</h1>
+          <p>We hope you enjoy your food</p>
+          <div class="modal__product">
+            
+          </div>
+          <div class="product__cart-total modal-total">
+            <p>Order Total</p>
+            <h2 class="modal__total">$</h2>
+          </div>
+          <button class="product__cart-order-btn start__button">Start New Order</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/new.js"></script>
+  </body>
+</html>
