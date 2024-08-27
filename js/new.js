@@ -67,7 +67,6 @@ function addToCard(id, key) {
 }
 
 function removeItem(key, id) {
-  const index = carts.findIndex((item) => item.id === id);
 
   const remove = carts.filter((item) => item.id !== id);
 
@@ -102,6 +101,10 @@ function showItems() {
                   <p class="total-price">$${item.price * item.quantity}</p>
                 </div>
               </div>
+              <div class="child-btns">
+                <button onclick="decrement(${item.id})">-</button>
+                <button onclick="increment(${item.id})">+</button>
+              </div>
               <button onclick="removeItem(${key}, ${item.id})" class="child-img"
                 ><img src="assets/images/icon-remove-item.svg" alt=""
               /></button>
@@ -116,9 +119,9 @@ function showItems() {
   }
 }
 
-function increment(product__id) {
+function increment(id) {
   const meals = carts.map((item) => {
-    if (item.id == product__id) {
+    if (item.id == id) {
       return {
         ...item,
         quantity: item.quantity + 1,
@@ -129,16 +132,21 @@ function increment(product__id) {
   });
 
   carts = meals;
+ showItems()
+  
 }
-function decrement(product__id) {
-  const product = carts.find((item) => item.id === product__id);
+function decrement(id) {
+  const product = carts.find((item) => item.id === id);
 
   if (product.quantity === 1) {
-    removeItem();
-    console.log("nice");
+    const remove = carts.filter((item) => item.id !== id);
+
+  carts = remove;
+
+  showItems();
   } else {
     const meal = carts.map((item) => {
-      if (item.id == product__id) {
+      if (item.id == id) {
         return {
           ...item,
           quantity: item.quantity - 1,
@@ -150,6 +158,7 @@ function decrement(product__id) {
 
     carts = meal;
   }
+  showItems()
 }
 
 confirmBtn.addEventListener("click", () => {

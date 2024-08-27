@@ -14,10 +14,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
-  gap: 50px;
 }
 .product__item {
-  width: 100%;
+  min-width: 80%;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 15px;
@@ -79,7 +78,7 @@ body {
   border-radius: 50%;
   font-size: 16px;
 }
-.active-btn{
+.active-btn {
   background-color: rgb(184, 14, 14);
   color: #fff;
 }
@@ -88,7 +87,6 @@ body {
   color: rgb(184, 14, 14);
   cursor: pointer;
 }
-
 
 .product__item-child-info h1 {
   font-size: 16px;
@@ -101,10 +99,49 @@ body {
   font-weight: 700;
 }
 
+/* ---------- responsive --------- */
+
+@media only screen and (max-width: 1356px) {
+  .container {
+    width: 1298px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  .product__item {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  .product__item {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+
 /* -------------------------------------------------- Cart ----------------------------- */
 
 .product__cart {
-  width: 350px;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -131,12 +168,12 @@ body {
   justify-content: space-between;
 }
 .product__cart-child {
-  width: 350px;
+  position: relative;
+  width: 450px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 22px;
-  gap: 100px;
 }
 .product__cart-child .child-img {
   width: 20px;
@@ -164,22 +201,37 @@ body {
 .child-info .total-price {
   color: brown;
 }
+.child-btns {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  left: 300px;
+}
+.child-btns button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #dda2a2;
+  background-color: #fff;
+}
 .product__cart-order {
-  width: 350px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 100px;
 }
 .product__cart-total {
-  width: 350px;
+  width: 450px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .product__cart-order-btn {
   cursor: pointer;
-  width: 350px;
+  width: 450px;
   height: 65px;
   font-size: 18px;
   font-weight: 600;
@@ -189,12 +241,12 @@ body {
   color: #fff;
   transition: all 0.2s ease;
 }
-.product__cart-order-btn:hover{
+.product__cart-order-btn:hover {
   background-color: #860a0a;
 }
- /* ----------------------------- Modal ------------------------ */
+/* ----------------------------- Modal ------------------------ */
 
- .modal{
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -204,12 +256,12 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
- }
- .modal__diolog{
+}
+.modal__diolog {
   max-width: 500px;
   margin: 40px auto;
- }
- .modal__content {
+}
+.modal__content {
   position: relative;
   width: 100%;
   padding: 40px;
@@ -222,7 +274,7 @@ body {
   flex-direction: column;
   align-items: baseline;
 }
-.modal__product{
+.modal__product {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,44 +286,43 @@ body {
   overflow: scroll;
   scrollbar-width: none;
 }
-.modal__cart{
+.modal__cart {
   width: 460px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
-.modal__child-info{
+.modal__child-info {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.modal-total{
+.modal-total {
   width: 500px;
   margin-top: 20px;
 }
-.modal__total-price{
+.modal__total-price {
   font-size: 16px;
   font-weight: 700;
 }
-.modal-img{
+.modal-img {
   width: 70px;
   border-radius: 10px;
   cursor: pointer;
 }
-.info{
+.info {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.info p{
+.info p {
   color: #b80e0e;
 }
-.info span{
+.info span {
   opacity: 0.7;
 }
 
-.start__button{
+.start__button {
   width: 500px;
   margin-top: 20px;
 }
